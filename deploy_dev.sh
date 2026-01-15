@@ -5,14 +5,9 @@ echo "=============================="
 echo " Deploying DEV using Compose"
 echo "=============================="
 
-# Stop and remove existing containers
-docker-compose down
-
-# Pull latest image (optional but recommended)
-docker-compose pull || true
-
-# Start fresh containers
-docker-compose up -d --build
+docker-compose -f docker-compose-dev.yml down || true
+docker-compose -f docker-compose-dev.yml pull || true
+docker-compose -f docker-compose-dev.yml up -d
 
 echo "=============================="
 echo " DEV Deployment Completed"
