@@ -46,14 +46,16 @@ pipeline {
             }
         }
 
-        stage('Deploy (Dev only)') {
-            when {
-                branch 'dev'
-            }
-            steps {
-                sh 'sh deploy.sh'
-            }
-        }
+        stage('Deploy DEV') {
+    when {
+        branch 'dev'
+    }
+    steps {
+        sh 'chmod +x deploy_dev.sh'
+        sh './deploy_dev.sh'
+    }
+}
+
     }
 }
 
