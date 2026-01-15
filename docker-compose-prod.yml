@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: yuvarani1996/prod:latest
+    container_name: devops_build_app_prod
+    ports:
+      - "80:80"
+    restart: unless-stopped
+
